@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PhotoArt.Web.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="PhotoArt.Web.Admin.Admin" %>
 
 <!DOCTYPE html>
 
@@ -41,33 +41,18 @@
             </Scripts>
         </asp:ScriptManager>
 
-         <!-- Header -->
-			<div id="header">
-                <div class="img">
-                </div>
-				<h1>Express Yourself.</h1>
-			</div>
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" id="logo" runat="server" href="~/">
+                    <a class="navbar-brand" id="logoAdmin" runat="server" href="~/">Client Side
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/Admin/Default">Admin</a></li>
+                        <li><a runat="server" href="~/Admin/">Home</a></li>
+                        <li><a runat="server" href="~/Admin/Portfolios/All">Portfolios</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
@@ -85,7 +70,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Photo Art</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Photo Art Admin Panel</p>
             </footer>
         </div>
     </form>
