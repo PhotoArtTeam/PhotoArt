@@ -8,6 +8,7 @@
     using Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Contracts;
+    using Migrations;
 
     // using Migrations;
 
@@ -16,9 +17,20 @@
         public PhotoArtDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<PhotoArtDbContext, Configuration>());
         }
 
-        // public virtual IDbSet<Category> Categories { get; set; }
+        public virtual IDbSet<Portfolio> Portfolios { get; set; }
+
+        public virtual IDbSet<Album> Albums { get; set; }
+
+        public virtual IDbSet<Image> Images { get; set; }
+
+        public virtual IDbSet<Comment> Comments { get; set; }
+
+        public virtual IDbSet<Technology> Technologies { get; set; }
+
+        public virtual IDbSet<Category> Categories { get; set; }
 
         public static PhotoArtDbContext Create()
         {

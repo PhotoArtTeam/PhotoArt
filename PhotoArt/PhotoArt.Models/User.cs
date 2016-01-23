@@ -5,6 +5,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class User : IdentityUser
     {
@@ -19,6 +20,7 @@
 
         public string Country { get; set; }
 
+        [ForeignKey("Portfolio")]
         public int PortfolioId { get; set; }
 
         public virtual Portfolio Portfolio { get; set; }

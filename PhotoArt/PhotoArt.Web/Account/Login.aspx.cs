@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using PhotoArt.Web.Models;
+using PhotoArt.Models;
 
 namespace PhotoArt.Web.Account
 {

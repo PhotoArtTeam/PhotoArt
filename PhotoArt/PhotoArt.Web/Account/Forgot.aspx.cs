@@ -4,7 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using PhotoArt.Web.Models;
+using PhotoArt.Models;
 
 namespace PhotoArt.Web.Account
 {
@@ -20,7 +20,7 @@ namespace PhotoArt.Web.Account
             {
                 // Validate the user's email address
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                ApplicationUser user = manager.FindByName(Email.Text);
+                User user = manager.FindByName(Email.Text);
                 if (user == null || !manager.IsEmailConfirmed(user.Id))
                 {
                     FailureText.Text = "The user either does not exist or is not confirmed.";

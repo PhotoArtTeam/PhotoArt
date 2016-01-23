@@ -5,6 +5,7 @@
     using PhotoArt.Contracts;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Portfolio : IDeletableEntity
     {
@@ -18,9 +19,12 @@
         [Key]
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public string Name { get; set; }
 
-        public virtual User User { get; set; }
+        //[ForeignKey("User")]
+        //public string UserId { get; set; }
+
+        //public virtual User User { get; set; }
 
         public DateTime? DeletedOn { get; set; }
 
