@@ -203,8 +203,36 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\HtmlPage1.html" />
     <Content Include="Admin\Portfolios\All.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\admin\AdminLTE.min.css" />
+    <Content Include="Content\admin\skins\skin-black-light.css" />
+    <Content Include="Content\admin\skins\skin-black-light.min.css" />
+    <Content Include="Content\admin\skins\skin-black.css" />
+    <Content Include="Content\admin\skins\skin-black.min.css" />
+    <Content Include="Content\admin\skins\skin-blue-light.css" />
+    <Content Include="Content\admin\skins\skin-blue-light.min.css" />
+    <Content Include="Content\admin\skins\skin-blue.css" />
+    <Content Include="Content\admin\skins\skin-blue.min.css" />
+    <Content Include="Content\admin\skins\skin-green-light.css" />
+    <Content Include="Content\admin\skins\skin-green-light.min.css" />
+    <Content Include="Content\admin\skins\skin-green.css" />
+    <Content Include="Content\admin\skins\skin-green.min.css" />
+    <Content Include="Content\admin\skins\skin-purple-light.css" />
+    <Content Include="Content\admin\skins\skin-purple-light.min.css" />
+    <Content Include="Content\admin\skins\skin-purple.css" />
+    <Content Include="Content\admin\skins\skin-purple.min.css" />
+    <Content Include="Content\admin\skins\skin-red-light.css" />
+    <Content Include="Content\admin\skins\skin-red-light.min.css" />
+    <Content Include="Content\admin\skins\skin-red.css" />
+    <Content Include="Content\admin\skins\skin-red.min.css" />
+    <Content Include="Content\admin\skins\skin-yellow-light.css" />
+    <Content Include="Content\admin\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\admin\skins\skin-yellow.css" />
+    <Content Include="Content\admin\skins\skin-yellow.min.css" />
+    <Content Include="Content\admin\skins\_all-skins.css" />
+    <Content Include="Content\admin\skins\_all-skins.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\bottom-1280.svg" />
@@ -232,6 +260,8 @@
     </Content> -->
     <Content Include="Admin\Admin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Admin\app.js" />
+    <Content Include="Scripts\Admin\dashboard.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\appStart.js" />
@@ -561,6 +591,7 @@
     <Content Include="Scripts\Libs\bootstrap-material-design\sass\_variables.scss" />
     <Content Include="Scripts\Libs\bootstrap-material-design\sass\_welljumbo.scss" />
     <Content Include="Scripts\Libs\bootstrap-material-design\_config.yml" />
+    <Content Include="Scripts\Libs\bootstrap-material-design\grunt\.jshintrc" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

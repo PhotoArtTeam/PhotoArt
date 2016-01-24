@@ -39,8 +39,11 @@ namespace PhotoArt.Web
                      "~/Scripts/bootstrap.min.js",
                      "~/Scripts/Libs/bootstrap-material-design/dist/js/ripples.min.js",
                      "~/Scripts/Libs/bootstrap-material-design/dist/js/material.min.js",
-                     "~/Scripts/appStart.js"
-       ));
+                     "~/Scripts/appStart.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Admin").Include(
+                "~/Scripts/Admin/app.js",
+                "~/Scripts/Admin/dashboard.js"));
 
             ScriptManager.ScriptResourceMapping.AddDefinition(
                 "respond",

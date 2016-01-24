@@ -13,15 +13,6 @@ namespace PhotoArt.Web.Admin {
     public partial class Admin {
         
         /// <summary>
-        /// logoAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor logoAdmin;
-        
-        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
