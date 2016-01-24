@@ -5,7 +5,7 @@
 		line.upper { stroke: rgba(224,224,224,0.15); }
 		line.lower { stroke: rgba(224,224,224,0.75); }
 		polygon.one { fill: #f8f8f8; }
-		polygon.two { fill: #ffffff; }
+        polygon.two { fill: #ffffff; }
     ]]></style>	
 
 	<!-- Backgrounds -->

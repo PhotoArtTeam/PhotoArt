@@ -21,7 +21,7 @@
         public string Country { get; set; }
 
         [ForeignKey("Portfolio")]
-        public int PortfolioId { get; set; }
+        public int? PortfolioId { get; set; }
 
         public virtual Portfolio Portfolio { get; set; }
 
