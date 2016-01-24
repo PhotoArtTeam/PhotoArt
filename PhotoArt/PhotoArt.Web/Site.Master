@@ -12,6 +12,7 @@
     <asp:PlaceHolder runat="server">
         <%: Styles.Render("~/Content/main") %>
         <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/bundles/Site") %>
 
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />

@@ -45,7 +45,7 @@
          <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="About" CssClass="col-md-2 control-label">About</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="About" CssClass="form-control" TextMode="MultiLine" />
+                <asp:TextBox runat="server" ID="About" CssClass="form-control" TextMode="MultiLine" ToolTip="Nana"/>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="About"
                     CssClass="text-danger" ErrorMessage="The country field is required." />
             </div>

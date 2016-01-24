@@ -34,6 +34,14 @@ namespace PhotoArt.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Site").Include(
+                     "~/Scripts/jquery.min.js",
+                     "~/Scripts/bootstrap.min.js",
+                     "~/Scripts/Libs/bootstrap-material-design/dist/js/ripples.min.js",
+                     "~/Scripts/Libs/bootstrap-material-design/dist/js/material.min.js",
+                     "~/Scripts/appStart.js"
+       ));
+
             ScriptManager.ScriptResourceMapping.AddDefinition(
                 "respond",
                 new ScriptResourceDefinition
