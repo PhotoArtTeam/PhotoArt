@@ -35,7 +35,7 @@ namespace PhotoArt.Web
                             "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/Site").Include(
-                     "~/Scripts/jquery.min.js",
+                     "~/Scripts/jquery-1.10.2.min.js",
                      "~/Scripts/bootstrap.min.js",
                     "~/Scripts/material.min.js",
                     "~/Scripts/ripples.min.js",

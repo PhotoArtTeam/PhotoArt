@@ -10,35 +10,73 @@ namespace PhotoArt.Web.Portfolios
 {
     public partial class Create : BasePage
     {
+    
         protected void CreatePortfolio_Click(object sender, EventArgs e)
         {
+            this.PanelAlbums.Visible = true;
+
             var currentUser = Context.User.Identity.Name;
             var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
 
-            if (crUser.PortfolioId == null)
+            //if (crUser.PortfolioId == null)
+            // {
+            if (Page.IsValid)
             {
-                if (Page.IsValid)
+                var currentPortfolio = this.Data.Portfolios.Add(new Portfolio()
                 {
-                    var currentPortfolio = this.Data.Portfolios.Add(new Portfolio()
-                    {
-                        Name = this.Name.Text
-                    });
-                    crUser.PortfolioId = currentPortfolio.Id;
+                    Name = this.Name.Text
+                });
+                crUser.PortfolioId = currentPortfolio.Id;
+                
+                this.Data.SaveChanges();
+                this.DataBind();
+            }
+            else
+            {
 
-                    this.Data.SaveChanges();
+            }
+            // }
+            //else
+            //{
 
-                    this.DataBind();
-                }
-                else
+            // }
+        }
+
+        protected void CreateAlbum_Click(object sender, EventArgs e)
+        {
+            this.PanelImages.Visible = true;
+            var currentUser = Context.User.Identity.Name;
+            var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
+
+            var portfolioId = crUser.PortfolioId;
+
+            if (Page.IsValid)
+            {
+                var currentAlbum = this.Data.Albums.Add(new Album()
                 {
-
-                }
+                    Name = this.AlbumName.Text,
+                    Description = this.AlbumDescription.Text,
+                    PortfolioId = (int)portfolioId
+                });
+                this.Data.SaveChanges();
+                this.DataBind();
             }
             else
             {
 
             }
 
+        }
+
+        protected void AddImages_Click(object sender, EventArgs e)
+        {
+            if (ImagesUploadControl.HasFile)
+            {
+                foreach (var image in ImagesUploadControl.PostedFiles)
+                {
+                    var currentImage = image;
+                }
+            }
         }
     }
 }
