@@ -29,6 +29,14 @@
         public string Location { get; set; }
 
         public string Description { get; set; }
+        
+        public string OriginalName { get; set; }
+
+        public string Url { get; set; }
+
+        public string FileExtension { get; set; }
+
+        public byte[] Content { get; set; }
 
         public DateTime? DeletedOn { get; set; }
 
