@@ -27,27 +27,13 @@
             <asp:ScriptManager runat="server">
             </asp:ScriptManager>
 
-            <%-- <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                </div>
-                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Admin/">Home</a></li>
-                        <li><a runat="server" href="~/Admin/Portfolios/All">Portfolios</a></li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>--%>
-
             <header class="main-header">
                 <a class="logo" href="~/Home">
                     <span class="logo-mini">CS</span>
                     <span class="logo-lg">Clent Side</span>
                 </a>
 
-                <nav role="navigation" class="navbar navbar-static-top">
+                <nav role="navigation" class="navbar navbar-fixed-top">
                     <!-- Sidebar toggle button-->
                     <a href="#" data-toggle="offcanvas" role="button" class="sidebar-toggle"><span class="sr-only">Toggle navigation</span></a>
                     <div class="navbar-custom-menu">

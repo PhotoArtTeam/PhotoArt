@@ -5,10 +5,10 @@
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title><%: Page.Title %> - Photo Art</title>
-<<<<<<< HEAD
+
 
     <asp:PlaceHolder runat="server">
         <%: Styles.Render("~/Content/main") %>
@@ -16,9 +16,7 @@
         <%: Scripts.Render("~/bundles/Site") %>
 
     </asp:PlaceHolder>
-=======
->>>>>>> 654bc131319dc3d6f2c7b591db3204b97c533735
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -45,18 +43,12 @@
             </Scripts>
         </asp:ScriptManager>
 
-         <asp:PlaceHolder runat="server">
-        <%: Styles.Render("~/Content/main") %>
-        <%: Scripts.Render("~/bundles/modernizr") %>
-        <%: Scripts.Render("~/bundles/materialize") %>
-    </asp:PlaceHolder>
-
-         <!-- Header -->
-			<div id="header">
-                <div class="img">
-                </div>
-				<h1>Express Yourself.</h1>
-			</div>
+        <!-- Header -->
+        <div id="header">
+            <div class="img">
+            </div>
+            <h1>Express Yourself.</h1>
+        </div>
 
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -66,8 +58,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" id="logo" runat="server" href="~/">
-                    </a>
+                    <a class="navbar-brand" id="logo" runat="server" href="~/"></a>
                 </div>
                 <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -85,7 +76,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Portfolios/Create" title="Create Portfolio"> Create Portfolio</a></li>
+                                <li><a runat="server" href="~/Portfolios/Create" title="Create Portfolio">Create Portfolio</a></li>
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
@@ -105,9 +96,6 @@
             </footer>
         </div>
     </form>
-    <script>
-        $(function() {$.material.init()});
-    </script>
 </body>
-   
+
 </html>
