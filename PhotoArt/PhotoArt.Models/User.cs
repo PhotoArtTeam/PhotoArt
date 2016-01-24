@@ -16,13 +16,18 @@
             this.comments = new HashSet<Comment>();
         }
 
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
         public string About { get; set; }
 
         public string Country { get; set; }
 
-        [ForeignKey("Portfolio")]
-        public int PortfolioId { get; set; }
+        
+        public int? PortfolioId { get; set; }
 
+        [ForeignKey("PortfolioId")]
         public virtual Portfolio Portfolio { get; set; }
 
         public virtual ICollection<Comment> Comments

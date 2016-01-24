@@ -21,9 +21,10 @@
 
         public string Name { get; set; }
 
-        //[ForeignKey("User")]
+       
         //public string UserId { get; set; }
 
+        //[ForeignKey("UserId")]
         //public virtual User User { get; set; }
 
         public DateTime? DeletedOn { get; set; }

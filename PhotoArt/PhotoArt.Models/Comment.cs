@@ -2,14 +2,16 @@
 {
     using Contracts;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Comment : AuditInfo
     {
         [Key]
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
         public int ImageId { get; set; }
