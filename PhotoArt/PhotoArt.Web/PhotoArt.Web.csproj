@@ -202,11 +202,13 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\Albums\Pending.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\HtmlPage1.html" />
     <Content Include="Admin\Portfolios\All.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\admin\AdminLTE.min.css" />
+    <Content Include="Content\admin\panel.css" />
     <Content Include="Content\admin\skins\skin-black-light.css" />
     <Content Include="Content\admin\skins\skin-black-light.min.css" />
     <Content Include="Content\admin\skins\skin-black.css" />
@@ -266,6 +268,7 @@
     <Content Include="Scripts\Admin\app.js" />
     <Content Include="Scripts\Admin\dashboard.js" />
     <Content Include="Portfolios\Create.aspx" />
+    <Content Include="Scripts\Admin\events.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\appStart.js" />
@@ -558,6 +561,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Albums\Pending.aspx.cs">
+      <DependentUpon>Pending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Albums\Pending.aspx.designer.cs">
+      <DependentUpon>Pending.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

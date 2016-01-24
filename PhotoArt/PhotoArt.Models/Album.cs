@@ -23,6 +23,8 @@
 
         public string Description { get; set; }
 
+        public bool IsApproved { get; set; }
+
         public int PortfolioId { get; set; }
 
         public virtual Portfolio Portfolio { get; set; }

@@ -50,7 +50,7 @@
                                                 <!-- start message-->
                                                 <a href="#">
                                                     <div class="pull-left">
-                                                        <img src="/img/home-bg.jpg" alt="User Image" class="img-circle">
+                                                        
                                                     </div>
                                                     <h4>Support Team<small><i class="fa fa-clock-o"></i> 5 mins</small></h4>
                                                     <p>Why not buy a new awesome theme?</p>
@@ -60,7 +60,7 @@
                                             <li>
                                                 <a href="#">
                                                     <div class="pull-left">
-                                                        <img src="/img/home-bg.jpg" alt="User Image" class="img-circle">
+                                                     
                                                     </div>
                                                     <h4>AdminLTE Design Team<small><i class="fa fa-clock-o"></i> 2 hours</small></h4>
                                                     <p>Why not buy a new awesome theme?</p>
@@ -100,7 +100,7 @@
                                 <ul class="dropdown-menu">
                                     <!-- User image-->
                                     <li class="user-header">
-                                        <img src="/img/home-bg.jpg" alt="User Image" class="img-circle">
+                                     
                                         <p>Alexander Pierce - Web Developer<small>Member since Nov. 2012<!-- Menu Footer--></small></p>
                                     </li>
                                     <li class="user-footer">
