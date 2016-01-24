@@ -34,6 +34,7 @@ namespace PhotoArt.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
 
+<<<<<<< HEAD
             bundles.Add(new ScriptBundle("~/bundles/Site").Include(
                      "~/Scripts/jquery.min.js",
                      "~/Scripts/bootstrap.min.js",
@@ -44,6 +45,11 @@ namespace PhotoArt.Web
             bundles.Add(new ScriptBundle("~/bundles/Admin").Include(
                 "~/Scripts/Admin/app.js",
                 "~/Scripts/Admin/dashboard.js"));
+=======
+            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
+                "~/Scripts/material.min.js",
+                "~/Scripts/ripples.min.js"));
+>>>>>>> 654bc131319dc3d6f2c7b591db3204b97c533735
 
             ScriptManager.ScriptResourceMapping.AddDefinition(
                 "respond",

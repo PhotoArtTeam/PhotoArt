@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title><%: Page.Title %> - Photo Art</title>
+<<<<<<< HEAD
 
     <asp:PlaceHolder runat="server">
         <%: Styles.Render("~/Content/main") %>
@@ -15,6 +16,8 @@
         <%: Scripts.Render("~/bundles/Site") %>
 
     </asp:PlaceHolder>
+=======
+>>>>>>> 654bc131319dc3d6f2c7b591db3204b97c533735
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -42,6 +45,12 @@
             </Scripts>
         </asp:ScriptManager>
 
+         <asp:PlaceHolder runat="server">
+        <%: Styles.Render("~/Content/main") %>
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/bundles/materialize") %>
+    </asp:PlaceHolder>
+
          <!-- Header -->
 			<div id="header">
                 <div class="img">
@@ -49,7 +58,7 @@
 				<h1>Express Yourself.</h1>
 			</div>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,6 +85,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Portfolios/Create" title="Create Portfolio"> Create Portfolio</a></li>
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
@@ -86,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+        <div class="container">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
@@ -95,5 +105,9 @@
             </footer>
         </div>
     </form>
+    <script>
+        $(function() {$.material.init()});
+    </script>
 </body>
+   
 </html>
