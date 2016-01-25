@@ -12,15 +12,11 @@ namespace PhotoArt.Web.Admin.Albums
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var pendingAlbums = this.Data.Albums
-            //                    .Where(x => !x.IsApproved)
-            //                    .ToList();
+            var pendingAlbums = this.Data.Albums
+                                .Where(x => !x.IsApproved)
+                                .ToList();
 
-            var pendingAlbums = new List<Album>
-            {
-                new Album {Name = "Cats" },
-                new Album {Name = "Nature" }
-            };
+
             PendingAlbums.DataSource = pendingAlbums;
             DataBind();
         }
