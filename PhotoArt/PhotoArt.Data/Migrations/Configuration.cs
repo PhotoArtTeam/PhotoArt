@@ -2,10 +2,11 @@ namespace PhotoArt.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    using Microsoft.AspNet.Identity.EntityFramework;   
-    
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     using EnumTablesHelper;
     using Models;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<PhotoArt.Data.PhotoArtDbContext>
     {
@@ -28,7 +29,10 @@ namespace PhotoArt.Data.Migrations
               new IdentityRole { Name = "User" }
             );
 
-            EnumTablesHelper.SeedEnumData<TechnologyType, TechnologyTypeEnum>(context.TechnologyTypes);
+            if (context.TechnologyTypes.Count() == 0)
+            {
+                EnumTablesHelper.SeedEnumData<TechnologyType, TechnologyTypeEnum>(context.TechnologyTypes);
+            }
         }
     }
 }
