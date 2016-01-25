@@ -14,7 +14,7 @@ namespace PhotoArt.Web.Portfolios
         protected void CreatePortfolio_Click(object sender, EventArgs e)
         {
             this.PanelAlbums.Visible = true;
-
+            this.PanelPorfolio.Visible = false;
             var currentUser = Context.User.Identity.Name;
             var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
 
@@ -45,6 +45,7 @@ namespace PhotoArt.Web.Portfolios
         protected void CreateAlbum_Click(object sender, EventArgs e)
         {
             this.PanelImages.Visible = true;
+            this.PanelAlbums.Visible = false;
             var currentUser = Context.User.Identity.Name;
             var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
 

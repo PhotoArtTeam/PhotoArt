@@ -31,6 +31,15 @@ namespace PhotoArt.Web.Portfolios {
         protected global::System.Web.UI.UpdatePanel UpdatePanelPortfolio;
         
         /// <summary>
+        /// PanelPorfolio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelPorfolio;
+        
+        /// <summary>
         /// Name control.
         /// </summary>
         /// <remarks>
