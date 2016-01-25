@@ -1,11 +1,18 @@
-﻿namespace PhotoArt.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PhotoArt.Models
 {
-    public enum TechnologyType
+    public enum TechnologyTypeEnum 
     {
-        None = 0,
-        Photoshop = 1,
-        FinalCut = 2,
-        StudioPhotography = 3,
-        MotionVideo = 4
+        None = 1,
+        Photoshop = 2,
+        FinalCut = 3,
+        StudioPhotography = 4,
+        MotionVideo = 5
+    }
+
+    [Table("TechnologyTypes")]
+    public class TechnologyType : EnumBase<TechnologyTypeEnum>
+    {
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="Album.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="EnumBase.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

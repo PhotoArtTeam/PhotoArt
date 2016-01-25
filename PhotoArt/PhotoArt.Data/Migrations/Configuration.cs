@@ -1,16 +1,17 @@
 namespace PhotoArt.Data.Migrations
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
+
+    using Microsoft.AspNet.Identity.EntityFramework;   
+    
+    using EnumTablesHelper;
+    using Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<PhotoArt.Data.PhotoArtDbContext>
     {
         public Configuration()
         {
-           this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationsEnabled = true;
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
@@ -23,10 +24,11 @@ namespace PhotoArt.Data.Migrations
             //
             context.Roles.AddOrUpdate(
               p => p.Name,
-              new IdentityRole { Name="Admin" },
+              new IdentityRole { Name = "Admin" },
               new IdentityRole { Name = "User" }
             );
 
+            EnumTablesHelper.SeedEnumData<TechnologyType, TechnologyTypeEnum>(context.TechnologyTypes);
         }
     }
 }

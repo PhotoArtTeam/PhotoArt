@@ -20,17 +20,19 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<PhotoArtDbContext, Configuration>());
         }
 
-        public virtual IDbSet<Portfolio> Portfolios { get; set; }
+        public  IDbSet<Portfolio> Portfolios { get; set; }
 
-        public virtual IDbSet<Album> Albums { get; set; }
+        public  IDbSet<Album> Albums { get; set; }
 
-        public virtual IDbSet<Image> Images { get; set; }
+        public  IDbSet<Image> Images { get; set; }
 
-        public virtual IDbSet<Comment> Comments { get; set; }
+        public  IDbSet<Comment> Comments { get; set; }
 
-        public virtual IDbSet<Technology> Technologies { get; set; }
+        public  IDbSet<Technology> Technologies { get; set; }
 
-        public virtual IDbSet<Category> Categories { get; set; }
+        public  IDbSet<Category> Categories { get; set; }
+
+        public  IDbSet<TechnologyType> TechnologyTypes { get; set; }
 
         public static PhotoArtDbContext Create()
         {

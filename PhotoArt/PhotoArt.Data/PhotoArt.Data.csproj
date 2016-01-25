@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\EnumTablesHelper.cs" />
     <Compile Include="IPhotoArtDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PhotoArtDbContext.cs" />
