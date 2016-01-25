@@ -61,8 +61,9 @@ namespace PhotoArt.Web.Portfolios
                     Description = this.AlbumDescription.Text,
                     PortfolioId = (int)portfolioId
                 });
-                currentAlbumId = currentAlbum.Id;
+                
                 this.Data.SaveChanges();
+                currentAlbumId = currentAlbum.Id;
                 this.DataBind();
             }
             else
@@ -74,9 +75,9 @@ namespace PhotoArt.Web.Portfolios
 
         protected void AddImages_Click(object sender, EventArgs e)
         {
-            if (ImagesUploadControl.HasFile)
+            if (fileuploadControl.HasFile)
             {
-                foreach (var image in ImagesUploadControl.PostedFiles)
+                foreach (var image in fileuploadControl.PostedFiles)
                 {
                     var currentImage = image;
                     Stream img_strm = currentImage.InputStream;

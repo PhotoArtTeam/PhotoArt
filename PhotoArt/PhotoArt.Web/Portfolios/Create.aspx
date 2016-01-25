@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="PhotoArt.Web.Portfolios.Create" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <link href="../Content/file-upload-style.css" rel="stylesheet" />
+    <script src="../Scripts/CustomScripts/previewImageScript.js"></script>
+
     <h2><%: Title %>Create Portfolio</h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
@@ -71,7 +75,12 @@
         <asp:UpdatePanel ID="UpdatePanelImages" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <asp:Panel ID="PanelImages" runat="server" Visible="false">
-                    <asp:FileUpload ID="ImagesUploadControl" runat="server" AllowMultiple="true" />
+                    <label class="file-upload">
+                        <span><strong>Upload Images</strong></span>
+                        <asp:FileUpload ID="fileuploadControl" runat="server" AllowMultiple="true" />
+                    </label>
+                    <div id="dvPreview">
+                    </div>
                     <asp:Button runat="server" ID="AddImages" Text="Add Pictures" OnClick="AddImages_Click" />
                 </asp:Panel>
             </ContentTemplate>

@@ -121,13 +121,13 @@ namespace PhotoArt.Web.Portfolios {
         protected global::System.Web.UI.WebControls.Panel PanelImages;
         
         /// <summary>
-        /// ImagesUploadControl control.
+        /// fileuploadControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ImagesUploadControl;
+        protected global::System.Web.UI.WebControls.FileUpload fileuploadControl;
         
         /// <summary>
         /// AddImages control.
