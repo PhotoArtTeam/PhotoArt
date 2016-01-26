@@ -13,12 +13,21 @@ namespace PhotoArt.Web.Admin.Albums {
     public partial class Pending {
         
         /// <summary>
-        /// PendingAlbums control.
+        /// GridPendingAlbums control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater PendingAlbums;
+        protected global::System.Web.UI.WebControls.GridView GridPendingAlbums;
+        
+        /// <summary>
+        /// LabelSelectedItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSelectedItem;
     }
 }
