@@ -202,6 +202,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\Albums\Details.aspx" />
     <Content Include="Admin\Albums\Pending.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\HtmlPage1.html" />
@@ -562,6 +563,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Albums\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Albums\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Albums\Pending.aspx.cs">
       <DependentUpon>Pending.aspx</DependentUpon>
