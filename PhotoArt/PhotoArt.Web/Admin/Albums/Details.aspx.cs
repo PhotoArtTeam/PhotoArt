@@ -17,14 +17,23 @@ namespace PhotoArt.Web.Admin.Albums
                 Response.Redirect("GridViewDemo.aspx");
             }
 
-            var image = this.Data.Albums
+            var images = this.Data.Albums
                 .FirstOrDefault(x => x.Id == id)
                 .Images
-                .FirstOrDefault();
-              
+                .ToList()
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    ImageContent = "data:image/jpeg;base64," + Convert.ToBase64String(x.Content)
+                }
+                );
 
-            this.ImagUrlLabel.Text = image.OriginalName;
-            this.ImageContainer.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(image.Content);
+            this.Carousel.DataSource = images;
+            this.DataBind();
+
+            // TODO: For cover maybe?
+            //this.ImagUrlLabel.Text = image.OriginalName;
+            //this.ImageContainer.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(image.Content);
         }
     }
 }
