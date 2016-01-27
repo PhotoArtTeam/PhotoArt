@@ -91,8 +91,8 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <hr />
         <footer class="container">
+        <hr />
             <p>&copy; <%: DateTime.Now.Year %> - Photo Art</p>
         </footer>
 
