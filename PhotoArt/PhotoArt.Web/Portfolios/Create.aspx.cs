@@ -29,7 +29,7 @@ namespace PhotoArt.Web.Portfolios
                     Name = this.Name.Text
                 });
                 crUser.PortfolioId = currentPortfolio.Id;
-                
+
                 this.Data.SaveChanges();
                 this.DataBind();
             }
