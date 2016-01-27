@@ -229,6 +229,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\Albums\Details.aspx" />
     <Content Include="Admin\Albums\Pending.aspx" />
+    <Content Include="Albums\Update.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\HtmlPage1.html" />
     <Content Include="Admin\Portfolios\All.aspx" />
@@ -299,6 +300,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Portfolios\YourPortfolio.aspx" />
     <Content Include="Scripts\Admin\app.js" />
     <Content Include="Scripts\Admin\dashboard.js" />
     <Content Include="Portfolios\Create.aspx" />
@@ -609,6 +611,13 @@
     <Compile Include="Admin\Albums\Pending.aspx.designer.cs">
       <DependentUpon>Pending.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Albums\Update.aspx.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Albums\Update.aspx.designer.cs">
+      <DependentUpon>Update.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -668,6 +677,13 @@
     </Compile>
     <Compile Include="Portfolios\Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portfolios\YourPortfolio.aspx.cs">
+      <DependentUpon>YourPortfolio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portfolios\YourPortfolio.aspx.designer.cs">
+      <DependentUpon>YourPortfolio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
