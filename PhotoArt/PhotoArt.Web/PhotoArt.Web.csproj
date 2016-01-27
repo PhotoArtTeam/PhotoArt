@@ -247,6 +247,7 @@
     <Content Include="Content\images\header.jpg" />
     <Content Include="Content\images\overlay.png" />
     <Content Include="Content\images\overlay2.png" />
+    <Content Include="Content\images\photo-film.jpg" />
     <Content Include="Content\images\photoArtLogo.png" />
     <Content Include="Content\images\photoArtLogoBig.png" />
     <Content Include="Content\images\top-1280.svg" />

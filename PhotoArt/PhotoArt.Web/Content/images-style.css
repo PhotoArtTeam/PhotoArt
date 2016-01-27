@@ -10,7 +10,8 @@
 }
 
 .gallery-images{
-    width: 180px;
+    width: 215px;
+    height: 140px;
 }
 a.polaroid {
 	/* ... */
@@ -22,10 +23,12 @@ a.polaroid {
 	-moz-transform: rotate(10deg);
 	transform: rotate(10deg);
 	-webkit-transition: all 0.5s ease-in;
-    width: 200px;
-	padding: 10px 10px 20px 10px;
+    width: 235px;
+    height: 214px;
+	padding: 40px 10px 20px 10px;
     border: 1px solid #BFBFBF;
-	background-color: white;
+    background-image:url(images/photo-film.jpg);
+    background-repeat:repeat-x;
 }
 a.polaroid:hover,
 a.polaroid:focus,

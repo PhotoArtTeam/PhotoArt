@@ -90,11 +90,12 @@
         <div class="container">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Photo Art</p>
-            </footer>
         </div>
+        <hr />
+        <footer class="container">
+            <p>&copy; <%: DateTime.Now.Year %> - Photo Art</p>
+        </footer>
+
     </form>
 </body>
 
