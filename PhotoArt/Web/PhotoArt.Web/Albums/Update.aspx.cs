@@ -112,7 +112,6 @@ namespace PhotoArt.Web.Admin.Albums
                         var task = imageResizer.Resize(imgdata, 200);
                         fileService.Save(task, currentImageUpload.Url);
 
-                        
                     }
                 }
             }
