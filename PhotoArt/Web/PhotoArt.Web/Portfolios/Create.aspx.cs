@@ -1,8 +1,10 @@
 ﻿using PhotoArt.Models;
+using PhotoArt.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,7 +14,11 @@ namespace PhotoArt.Web.Portfolios
     public partial class Create : BasePage
     {
         private static int currentAlbumId;
-    
+        private static string imageDirectory = "Images/{0}";
+        private static string imagePath = "Images/{0}/{1}_{2}.jpg";
+        private static ImageResizeService imageResizer = new ImageResizeService();
+        private static FileSystemService fileService = new FileSystemService();
+
         protected void CreatePortfolio_Click(object sender, EventArgs e)
         {
             this.PanelAlbums.Visible = true;
@@ -29,7 +35,7 @@ namespace PhotoArt.Web.Portfolios
                     Name = this.Name.Text
                 });
                 crUser.PortfolioId = currentPortfolio.Id;
-                
+
                 this.Data.SaveChanges();
                 this.DataBind();
             }
@@ -61,7 +67,7 @@ namespace PhotoArt.Web.Portfolios
                     Description = this.AlbumDescription.Text,
                     PortfolioId = (int)portfolioId
                 });
-                
+
                 this.Data.SaveChanges();
                 currentAlbumId = currentAlbum.Id;
                 this.DataBind();
@@ -89,17 +95,26 @@ namespace PhotoArt.Web.Portfolios
                     int n = img_strm.Read(imgdata, 0, img_len);
                     string imageExtension = strname.Substring(strname.LastIndexOf(".") + 1);
 
+
                     if (Page.IsValid)
                     {
-                        var currentImageUpload = this.Data.Images.Add(new Models.Image()
+                        var currentImageUpload = this.Data.Images.Add(new Models.Image
                         {
                             AlbumId = currentAlbumId,
                             Content = imgdata,
                             FileExtension = imageExtension,
                             OriginalName = strname
                         });
+
+
+                        this.Data.SaveChanges();
+                        currentImageUpload.Url = string.Format(imagePath, currentImageUpload.Id % 1000, currentImageUpload.Id, 200);
                         this.Data.SaveChanges();
                         this.DataBind();
+
+                        // TODO: Constants for image sizes we need
+                        var task = imageResizer.Resize(imgdata, 200);
+                        fileService.Save(task, currentImageUpload.Url);
                     }
                     else
                     {

@@ -16,19 +16,24 @@ namespace PhotoArt.Web.Admin.Albums
             {
                 Response.Redirect("GridViewDemo.aspx");
             }
-
-            var images = this.Data.Albums
-                .FirstOrDefault(x => x.Id == id)
-                .Images
-                .ToList()
+            var album = this.Data.Albums
+                .Where(x => x.Id == id)
                 .Select(x => new
                 {
-                    Id = x.Id,
-                    ImageContent = "data:image/jpeg;base64," + Convert.ToBase64String(x.Content)
-                }
-                );
+                    x.Id,
+                    x.Name,
+                    x.Description,
+                    Images = x.Images
+                    .Select(i => new
+                    {
+                        Id = i.Id,
+                        Url = i.Url
+                    })
+                })
+                .FirstOrDefault();
+            // TODO: check for null
 
-            this.Carousel.DataSource = images;
+            this.Carousel.DataSource = album.Images.Skip(0).Take(5);
             this.DataBind();
 
             // TODO: For cover maybe?

@@ -659,17 +659,21 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhotoArt.Contracts\PhotoArt.Contracts.csproj">
+    <ProjectReference Include="..\..\Data\PhotoArt.Contracts\PhotoArt.Contracts.csproj">
       <Project>{74116602-2cc8-43d7-b3e8-c36e109e03bb}</Project>
       <Name>PhotoArt.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhotoArt.Data\PhotoArt.Data.csproj">
+    <ProjectReference Include="..\..\Data\PhotoArt.Data\PhotoArt.Data.csproj">
       <Project>{73d1eddf-997f-4e17-8f12-2a7afe09dc6e}</Project>
       <Name>PhotoArt.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhotoArt.Models\PhotoArt.Models.csproj">
+    <ProjectReference Include="..\..\Data\PhotoArt.Models\PhotoArt.Models.csproj">
       <Project>{06c9a230-0515-4780-b4b3-39c7f9b4294f}</Project>
       <Name>PhotoArt.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\PhotoArt.Services\PhotoArt.Services.csproj">
+      <Project>{48ae42f2-de2f-4954-91a0-c90ef39e861e}</Project>
+      <Name>PhotoArt.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -697,13 +701,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

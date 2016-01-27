@@ -22,11 +22,12 @@ namespace PhotoArt.Web.Admin.Albums
                          Description = x.Description,
                          CreatedOn = x.CreatedOn,
                          IsApproved = x.IsApproved,
-                         CoverImage1 = "data:image/jpeg;base64," + x.Images.FirstOrDefault().Content,
-                         CoverImage = "data:image/jpeg;base64," + Convert.ToBase64String(x.Images.FirstOrDefault().Content)
+                         // For DB image
+                         // CoverImage = "data:image/jpeg;base64," + Convert.ToBase64String(x.Images.FirstOrDefault().Content)
+                         Url = x.Images.FirstOrDefault() != null ? x.Images.FirstOrDefault().Url : "" // TODO: Constants - no available image
                      })
                      .ToList();
-           // this.Image1.ImageUrl = pendingAlbums.FirstOrDefault().CoverImage;
+            // this.Image1.ImageUrl = pendingAlbums.FirstOrDefault().CoverImage;
             if (!Page.IsPostBack)
             {
                 this.GridPendingAlbums.DataSource = pendingAlbums;
@@ -39,7 +40,19 @@ namespace PhotoArt.Web.Admin.Albums
         {
             var pendingAlbums = this.Data.Albums
                                .Where(x => !x.IsApproved)
-                               .ToList();
+                               .ToList()
+                                .Select(x => new
+                                {
+                                    Id = x.Id,
+                                    Name = x.Name,
+                                    Description = x.Description,
+                                    CreatedOn = x.CreatedOn,
+                                    IsApproved = x.IsApproved,
+                                    // For DB image
+                                    // CoverImage = "data:image/jpeg;base64," + Convert.ToBase64String(x.Images.FirstOrDefault().Content)
+                                    Url = x.Images.FirstOrDefault() != null ? x.Images.FirstOrDefault().Url : "" // TODO: Constants - no available image
+                                })
+                                .ToList();
 
             this.GridPendingAlbums.PageIndex = e.NewPageIndex;
             this.GridPendingAlbums.DataSource = pendingAlbums;

@@ -18,12 +18,13 @@
         CssClass="table table-striped table-bordered table-condensed">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
-            <asp:TemplateField runat="server">
+            <%--<asp:TemplateField runat="server">
                 <ItemTemplate>
                     <img src="<%#: DataBinder.Eval(Container.DataItem, "CoverImage") %>" width="200px" height="100px" />
-                    <%-- <asp:Image ImageUrl="<%#: DataBinder.Eval(Container.DataItem, "CoverImage") %>" Width="200" Height="100" />--%>
+                     <asp:Image ImageUrl="<%#: DataBinder.Eval(Container.DataItem, "CoverImage") %>" Width="200" Height="100" />
                 </ItemTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
+            <asp:ImageField DataImageUrlField="Url" DataImageUrlFormatString="~/{0}" />
             <asp:BoundField DataField="Name" HeaderText="Title" />
             <asp:BoundField DataField="Description" HeaderText="Description" />
             <asp:BoundField DataField="CreatedOn" HeaderText="Created" />

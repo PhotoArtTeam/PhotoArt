@@ -416,7 +416,7 @@ a {
 
 .main-sidebar, .left-side {
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     padding-top: 50px;
     min-height: 100%;
@@ -463,6 +463,7 @@ a {
 
 .sidebar {
     padding-bottom: 10px;
+    margin-top: -50px;
 }
 
 .sidebar-form input:focus {

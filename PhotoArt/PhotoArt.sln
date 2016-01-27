@@ -1,15 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Data", "PhotoArt.Data\PhotoArt.Data.csproj", "{73D1EDDF-997F-4E17-8F12-2A7AFE09DC6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Data", "Data\PhotoArt.Data\PhotoArt.Data.csproj", "{73D1EDDF-997F-4E17-8F12-2A7AFE09DC6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Models", "PhotoArt.Models\PhotoArt.Models.csproj", "{06C9A230-0515-4780-B4B3-39C7F9B4294F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Models", "Data\PhotoArt.Models\PhotoArt.Models.csproj", "{06C9A230-0515-4780-B4B3-39C7F9B4294F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Contracts", "PhotoArt.Contracts\PhotoArt.Contracts.csproj", "{74116602-2CC8-43D7-B3E8-C36E109E03BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Contracts", "Data\PhotoArt.Contracts\PhotoArt.Contracts.csproj", "{74116602-2CC8-43D7-B3E8-C36E109E03BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Web", "PhotoArt.Web\PhotoArt.Web.csproj", "{1E1967F1-DED1-46B3-98AD-8C0224FB2434}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Web", "Web\PhotoArt.Web\PhotoArt.Web.csproj", "{1E1967F1-DED1-46B3-98AD-8C0224FB2434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoArt.Services", "Services\PhotoArt.Services\PhotoArt.Services.csproj", "{48AE42F2-DE2F-4954-91A0-C90EF39E861E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C98ED6B4-504D-4C85-810C-1C331253EE30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{75B92A70-1789-446B-8780-AE4D8AD4D9EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C75D0F6A-506E-4F41-9E93-F90A1B96FE73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +41,19 @@ Global
 		{1E1967F1-DED1-46B3-98AD-8C0224FB2434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E1967F1-DED1-46B3-98AD-8C0224FB2434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E1967F1-DED1-46B3-98AD-8C0224FB2434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48AE42F2-DE2F-4954-91A0-C90EF39E861E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AE42F2-DE2F-4954-91A0-C90EF39E861E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AE42F2-DE2F-4954-91A0-C90EF39E861E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AE42F2-DE2F-4954-91A0-C90EF39E861E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73D1EDDF-997F-4E17-8F12-2A7AFE09DC6E} = {75B92A70-1789-446B-8780-AE4D8AD4D9EA}
+		{06C9A230-0515-4780-B4B3-39C7F9B4294F} = {75B92A70-1789-446B-8780-AE4D8AD4D9EA}
+		{74116602-2CC8-43D7-B3E8-C36E109E03BB} = {75B92A70-1789-446B-8780-AE4D8AD4D9EA}
+		{1E1967F1-DED1-46B3-98AD-8C0224FB2434} = {C75D0F6A-506E-4F41-9E93-F90A1B96FE73}
+		{48AE42F2-DE2F-4954-91A0-C90EF39E861E} = {C98ED6B4-504D-4C85-810C-1C331253EE30}
 	EndGlobalSection
 EndGlobal
