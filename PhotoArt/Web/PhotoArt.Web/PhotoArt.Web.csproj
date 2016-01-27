@@ -240,12 +240,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\file-upload-style.css" />
+    <Content Include="Content\images-style.css" />
     <Content Include="Content\images\bottom-1280.svg" />
     <Content Include="Content\images\bottom-1600.svg" />
     <Content Include="Content\images\bottom-3200.svg" />
     <Content Include="Content\images\header.jpg" />
     <Content Include="Content\images\overlay.png" />
     <Content Include="Content\images\overlay2.png" />
+    <Content Include="Content\images\photo-film.jpg" />
     <Content Include="Content\images\photoArtLogo.png" />
     <Content Include="Content\images\photoArtLogoBig.png" />
     <Content Include="Content\images\top-1280.svg" />
@@ -257,6 +259,7 @@
     <Content Include="Content\images\pergaament-pattern.jpg" />
     <Content Include="Content\ripples.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="favicon %281%29.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

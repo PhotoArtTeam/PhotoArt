@@ -1,0 +1,49 @@
+﻿.pull-left.polaroid{
+	-webkit-transform: rotate(-9deg);
+	-moz-transform: rotate(-9deg);
+	transform: rotate(-9deg);
+    text-align:center;
+}
+.polaroid.to-the-right{
+	-webkit-transform: rotate(9deg);
+	-moz-transform: rotate(9deg);
+	transform: rotate(9deg);
+    text-align:center;
+}
+
+.gallery-images{
+    width: 215px;
+    height: 170px;
+    padding-top:40px;
+}
+a.polaroid {
+	/* ... */
+	z-index: 2;
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	-moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	transform: rotate(10deg);
+	-webkit-transition: all 0.5s ease-in;
+    width: 235px;
+    height: 264px;
+	padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-image:url(images/photo-film.jpg);
+    background-repeat:repeat-x;
+    background-position-y:bottom;
+    background-color:white;
+}
+a.polaroid:hover,
+a.polaroid:focus,
+a.polaroid:active {
+	z-index: 999;
+	border-color: #6A6A6A;
+	-webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+	-moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+	box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+	-webkit-transform: rotate(0deg) scale(1.15);
+	-moz-transform: rotate(0deg) scale(1.15);
+	transform: rotate(0deg) scale(1.15);
+}
