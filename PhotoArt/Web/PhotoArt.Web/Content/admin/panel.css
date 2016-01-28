@@ -93,7 +93,7 @@
 
 .btn-carousel-right {
     position: fixed;
-    right:0;
+    right: 0;
 }
 
 .carousel-row {
@@ -106,6 +106,14 @@
         padding: 0 5%;
     }
 
-    .panel-dark{
-         background: rgba(0,0,0,0.8);
-    }
+.panel-dark, th {
+    background: rgba(0,0,0,0.8) !important;
+}
+
+th {
+    color: rgba(255,255,255,0.7);
+}
+
+td a {
+color:rgba(0,0,0,0.8)  !important;
+}

@@ -8,19 +8,22 @@ namespace PhotoArt.Web.Admin.Albums
     public partial class Details : BasePage
     {
         private const int MAX_CAROUSEL_COLLECTION_COUNT = 5;
+        private const string CAROUSEL_OFFSET = "CarouselOffset";
+        private const string PENDING_ALBUMS_URL = "~/Admin/Albums/Pending.aspx";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["CarouselOffset"] == null)
+            if (Session[CAROUSEL_OFFSET] == null)
             {
-                Session["CarouselOffset"] = 0;
+                Session[CAROUSEL_OFFSET] = 0;
+            }
+
+            if (Request.Params["Id"] == null)
+            {
+                Response.Redirect(PENDING_ALBUMS_URL);
             }
 
             var id = int.Parse(Request.Params["Id"]);
-            if (Request.Params["Id"] == null)
-            {
-                Response.Redirect("GridViewDemo.aspx");
-            }
             var album = this.Data.Albums
                 .Where(x => x.Id == id)
                 .Select(x => new
@@ -36,16 +39,26 @@ namespace PhotoArt.Web.Admin.Albums
                     })
                 })
                 .FirstOrDefault();
+            if (album == null)
+            {
+                Response.Redirect(PENDING_ALBUMS_URL);
+            }
+
             // TODO: check for null
             var cover = this.Data.Albums
                 .Where(x => x.Id == id)
                 .Select(x => x.Images
                 .FirstOrDefault())
                 .FirstOrDefault();
-            this.CoverImage.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(cover.Content);
+
+            if (cover != null)
+            {
+                this.CoverImage.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(cover.Content);
+            }
+
             this.Carousel.DataSource = album.Images.Skip(0).Take(5);
             this.DataBind();
-            
+
             // TODO: For cover maybe?
             //this.ImagUrlLabel.Text = image.OriginalName;
             //this.ImageContainer.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(image.Content);
@@ -53,12 +66,12 @@ namespace PhotoArt.Web.Admin.Albums
 
         protected void Carousel_Prev(object sender, EventArgs e)
         {
-            Session["CarouselOffset"] = (int)Session["CarouselOffset"] - 1;
+            Session[CAROUSEL_OFFSET] = (int)Session[CAROUSEL_OFFSET] - 1;
 
             var id = int.Parse(Request.Params["Id"]);
             if (Request.Params["Id"] == null)
             {
-                Response.Redirect("GridViewDemo.aspx");
+                Response.Redirect(PENDING_ALBUMS_URL);
             }
 
             GetImageCollection(id);
@@ -67,17 +80,14 @@ namespace PhotoArt.Web.Admin.Albums
         protected void Carousel_Next(object sender, EventArgs e)
         {
             // TODO: max offset???
-            Session["CarouselOffset"] = (int)Session["CarouselOffset"] + 1;
+            Session[CAROUSEL_OFFSET] = (int)Session[CAROUSEL_OFFSET] + 1;
 
             var id = int.Parse(Request.Params["Id"]);
             if (Request.Params["Id"] == null)
             {
-                Response.Redirect("GridViewDemo.aspx");
+                Response.Redirect(PENDING_ALBUMS_URL);
             }
-
             GetImageCollection(id);
-
-
         }
 
         private void GetImageCollection(int id)
@@ -98,7 +108,7 @@ namespace PhotoArt.Web.Admin.Albums
               })
               .FirstOrDefault();
 
-            int skip = (int)Session["CarouselOffset"];
+            int skip = (int)Session[CAROUSEL_OFFSET];
             // TODO: check for null
             var cover = this.Data.Albums
                 .Where(x => x.Id == id)
@@ -112,9 +122,11 @@ namespace PhotoArt.Web.Admin.Albums
 
         protected void Carousel_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            var item = (Models.Image)e.Item.DataItem;
-            e.Item.ID= item.Id.ToString();
-
+            var item = e.Item.DataItem as Models.Image;
+            if(item != null)
+            {
+                e.Item.ID = item.Id.ToString();
+            }
         }
 
         protected void Carousel_Selected(int id)
