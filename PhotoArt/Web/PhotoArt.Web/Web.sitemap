@@ -15,9 +15,8 @@
       <siteMapNode title="Details" description="Albums description" url="~/Albums/Details"/>
       <siteMapNode title="Update" description="Albums Update" url="~/Albums/Update"/>
     </siteMapNode>
-    <siteMapNode title="Portfolios" description="Portfolios" url="~/Portfolios">
+    
       <siteMapNode title="Create" description="Create" url="~/Portfolios/Create"/>
       <siteMapNode title="YourPortfolio" description="Your Portfolio" url="~/Portfolios/YourPortfolio"/>
-    </siteMapNode>
   </siteMapNode>
 </siteMap>
