@@ -89,6 +89,25 @@
             </div>
         </div>
         <div class="container">
+            <asp:SiteMapPath
+                ID="SiteMap1"
+                runat="server"
+                PathSeparator=" / "
+                ParentLevelsDisplayed="1"
+                PathDirection="RootToCurrent"
+                RenderCurrentNodeAsLink="false"
+                ShowToolTips="false">
+                <NodeTemplate>
+                    <span>
+                        <asp:HyperLink
+                            ID="lnkPage"
+                            Text='<%# Eval("Title") %>'
+                            NavigateUrl='<%# Eval("Url") %>'
+                            ToolTip='<%# Eval("Description") %>'
+                            runat="server" />
+                    </span>
+                </NodeTemplate>
+            </asp:SiteMapPath>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
