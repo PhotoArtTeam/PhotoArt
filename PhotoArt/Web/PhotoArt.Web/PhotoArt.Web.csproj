@@ -236,6 +236,7 @@
     <Content Include="Admin\Portfolios\All.aspx" />
     <Content Include="Albums\Details.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\404.jpg" />
     <Content Include="Content\admin\AdminLTE.min.css" />
     <Content Include="Content\admin\panel.css" />
     <Content Include="Content\admin\skins\skin-black-light.css" />
@@ -306,6 +307,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="PageNotFound.aspx" />
     <Content Include="Portfolios\YourPortfolio.aspx" />
     <Content Include="Scripts\Admin\app.js" />
     <Content Include="Scripts\Admin\dashboard.js" />
@@ -707,6 +709,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="PageNotFound.aspx.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageNotFound.aspx.designer.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portfolios\Create.aspx.cs">
       <DependentUpon>Create.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
