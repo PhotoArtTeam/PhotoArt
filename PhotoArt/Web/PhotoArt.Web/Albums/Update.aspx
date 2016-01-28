@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Update Album" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="PhotoArt.Web.Admin.Albums.Update" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="../Scripts/jquery-1.10.2.min.js"></script>
     <link href="../Content/file-upload-style.css" rel="stylesheet" />
     <script src="../Scripts/CustomScripts/previewImageScript.js"></script>
     <link href="../Content/fotorama.css" rel="stylesheet" />
