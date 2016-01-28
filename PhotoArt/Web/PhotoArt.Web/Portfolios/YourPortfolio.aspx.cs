@@ -23,30 +23,39 @@ namespace PhotoArt.Web.Portfolios
             var currentUser = Context.User.Identity.Name;
             var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
 
-            var portfolioId = crUser.PortfolioId;
-
-            var portfolio = this.Data.Portfolios
-                .Where(x => x.Id == portfolioId)
-                .Select(x => new
-                {
-                    x.Id,
-                    x.Name,
-                    Albums = x.Albums
-                    .Select(a => new
-                    {
-                        Id = a.Id,
-                        Name = a.Name,
-                        Description = a.Description,
-                        CreatedOn = a.CreatedOn
-                    })
-                })
-                .FirstOrDefault();
-
-            if (!Page.IsPostBack)
+            if (crUser.PortfolioId != null)
             {
-                this.GridAlbums.DataSource = portfolio.Albums;
-                this.GridAlbums.DataBind();
+                var portfolioId = crUser.PortfolioId;
+
+                var portfolio = this.Data.Portfolios
+                    .Where(x => x.Id == portfolioId)
+                    .Select(x => new
+                    {
+                        x.Id,
+                        x.Name,
+                        Albums = x.Albums
+                        .Select(a => new
+                        {
+                            Id = a.Id,
+                            Name = a.Name,
+                            Description = a.Description,
+                            CreatedOn = a.CreatedOn
+                        })
+                    })
+                    .FirstOrDefault();
+
+                if (!Page.IsPostBack)
+                {
+                    this.GridAlbums.DataSource = portfolio.Albums;
+                    this.GridAlbums.DataBind();
+                }
             }
+            else
+            {
+                Response.Redirect("~/Portfolios/Create.aspx");
+            }
+
+            
         }
 
         protected void GridAlbums_PageIndexChanging(object sender,
