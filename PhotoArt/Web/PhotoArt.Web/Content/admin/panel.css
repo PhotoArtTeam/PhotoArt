@@ -101,7 +101,7 @@
     line-height: 7.5;
 }
 
-    .carousel-row img {
+    .carousel-row .img {
         width: 22%;
         padding: 0 5%;
     }

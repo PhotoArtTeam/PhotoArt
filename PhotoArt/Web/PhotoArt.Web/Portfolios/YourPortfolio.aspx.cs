@@ -2,6 +2,7 @@
 using PhotoArt.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -147,6 +148,9 @@ namespace PhotoArt.Web.Portfolios
 
                     if (Page.IsValid)
                     {
+                        int imageSize = Convert.ToInt32(ConfigurationManager.AppSettings["imageSize"]);
+                        int folderDistributor = Convert.ToInt32(ConfigurationManager.AppSettings["folderDistributor"]);
+
                         var currentImageUpload = this.Data.Images.Add(new Models.Image
                         {
                             AlbumId = currentAlbumId,
@@ -157,12 +161,12 @@ namespace PhotoArt.Web.Portfolios
 
 
                         this.Data.SaveChanges();
-                        currentImageUpload.Url = string.Format(imagePath, currentImageUpload.Id % 1000, currentImageUpload.Id, 200);
+                        currentImageUpload.Url = string.Format(imagePath, currentImageUpload.Id % folderDistributor, currentImageUpload.Id, imageSize);
                         this.Data.SaveChanges();
                         this.DataBind();
 
                         // TODO: Constants for image sizes we need
-                        var task = imageResizer.Resize(imgdata, 200);
+                        var task = imageResizer.Resize(imgdata, imageSize);
                         fileService.Save(task, currentImageUpload.Url);
                     }
                     else

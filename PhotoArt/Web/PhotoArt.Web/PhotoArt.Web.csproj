@@ -290,6 +290,7 @@
     <Content Include="Content\images\pergaament-pattern.jpg" />
     <Content Include="Content\ripples.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\Carousel.ascx" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="Account\Web.config" />
     <!-- <Content Include="ApplicationInsights.config">
@@ -662,6 +663,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Carousel.ascx.cs">
+      <DependentUpon>Carousel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Carousel.ascx.designer.cs">
+      <DependentUpon>Carousel.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

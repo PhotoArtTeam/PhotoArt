@@ -1,6 +1,7 @@
 ﻿using PhotoArt.Services;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -19,12 +20,12 @@ namespace PhotoArt.Web.Admin.Albums
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var id = int.Parse(Request.Params["Id"]);
-
             if (Request.Params["Id"] == null)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("~/Default.aspx");
             }
+
+            var id = int.Parse(Request.Params["Id"]);
             var album = this.Data.Albums
                 .Where(x => x.Id == id)
                 .Select(x => new
@@ -79,6 +80,9 @@ namespace PhotoArt.Web.Admin.Albums
         {
             if (fileuploadControl.HasFile)
             {
+                int imageSize = Convert.ToInt32(ConfigurationManager.AppSettings["imageSize"]);
+                int folderDistributor = Convert.ToInt32(ConfigurationManager.AppSettings["folderDistributor"]);
+
                 foreach (var image in fileuploadControl.PostedFiles)
                 {
                     var currentImage = image;
@@ -104,16 +108,16 @@ namespace PhotoArt.Web.Admin.Albums
 
 
                         this.Data.SaveChanges();
-                        currentImageUpload.Url = string.Format(imagePath, currentImageUpload.Id % 1000, currentImageUpload.Id, 200);
+                        currentImageUpload.Url = string.Format(imagePath, currentImageUpload.Id % folderDistributor, currentImageUpload.Id, imageSize);
                         this.Data.SaveChanges();
                         this.DataBind();
 
                         // TODO: Constants for image sizes we need
-                        var task = imageResizer.Resize(imgdata, 200);
+                        var task = imageResizer.Resize(imgdata, imageSize);
                         fileService.Save(task, currentImageUpload.Url);
 
                     }
-                    
+
                 }
             }
         }
