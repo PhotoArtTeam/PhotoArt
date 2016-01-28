@@ -1,5 +1,6 @@
 ﻿using PhotoArt.Models;
 using PhotoArt.Services;
+using PhotoArt.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,84 +24,34 @@ namespace PhotoArt.Web.Portfolios
             var currentUser = Context.User.Identity.Name;
             var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
 
-            if (crUser.PortfolioId != null)
-            {
-                var portfolioId = crUser.PortfolioId;
-
-                var portfolio = this.Data.Portfolios
-                    .Where(x => x.Id == portfolioId)
-                    .Select(x => new
-                    {
-                        x.Id,
-                        x.Name,
-                        Albums = x.Albums
-                        .Select(a => new
-                        {
-                            Id = a.Id,
-                            Name = a.Name,
-                            Description = a.Description,
-                            CreatedOn = a.CreatedOn
-                        })
-                    })
-                    .FirstOrDefault();
-
-                if (!Page.IsPostBack)
-                {
-                    this.GridAlbums.DataSource = portfolio.Albums;
-                    this.GridAlbums.DataBind();
-                }
-            }
-            else
+            if (crUser.PortfolioId == null)
             {
                 Response.Redirect("~/Portfolios/Create.aspx");
             }
-
-            
         }
 
-        protected void GridAlbums_PageIndexChanging(object sender,
-            System.Web.UI.WebControls.GridViewPageEventArgs e)
+        public IQueryable<AlbumViewModel> AlbumsGrid_GetData(object sender, EventArgs e)
         {
+
             var currentUser = Context.User.Identity.Name;
             var crUser = this.Data.Users.Where(u => u.UserName == currentUser).FirstOrDefault();
 
             var portfolioId = crUser.PortfolioId;
 
-            var portfolio = this.Data.Portfolios
-                .Where(x => x.Id == portfolioId)
-                .Select(x => new
-                {
-                    x.Id,
-                    x.Name,
-                    Albums = x.Albums
-                    .Select(a => new
+            var portfolio = this.Data.Portfolios;
+                return this.Data.Albums
+                    .Where(x => x.PortfolioId == portfolioId)
+                    .Select(x => new AlbumViewModel
                     {
-                        Id = a.Id,
-                        Name = a.Name,
-                        Description = a.Description,
-                        CreatedOn = a.CreatedOn
-                    })
-                })
-                .FirstOrDefault();
-
-            this.GridAlbums.PageIndex = e.NewPageIndex;
-            this.GridAlbums.DataSource = portfolio.Albums;
-            this.GridAlbums.DataBind();
-        }
-
-        protected void GridAlbums_RowDataBound(object sender,
-            GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Attributes["onmouseover"] =
-                    "this.style.background='#EEEEEE';this.style.cursor='hand'";
-                e.Row.Attributes["onmouseout"] =
-                    "this.style.background='white'";
-                e.Row.Attributes["onclick"] =
-                    ClientScript.GetPostBackClientHyperlink(
-                    this.GridAlbums, "Select$" + e.Row.RowIndex);
-            }
+                        Id = x.Id,
+                        Name = x.Name,
+                        Description = x.Description,
+                        CreatedOn = x.CreatedOn,
+                        IsApproved = x.IsApproved,
+                        // For DB image
+                        // CoverImage = "data:image/jpeg;base64," + Convert.ToBase64String(x.Images.FirstOrDefault().Content)
+                        CoverUrlPath = x.Images.FirstOrDefault() != null ? x.Images.FirstOrDefault().Url : "" // TODO: Constants - no available image
+                    });
         }
 
         protected void AddAlbum_Click(object sender, EventArgs e)
