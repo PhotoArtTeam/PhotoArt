@@ -18,7 +18,7 @@
         AllowSorting="True"
         AutoGenerateColumns="False"
         PageSize="10"
-        CssClass="table table-striped table-bordered table-condensed table-hover">
+        CssClass="table table-striped table-bordered table-condensed table-hover table-albums">
         <Columns>
             <%--<asp:TemplateField runat="server">
                 <ItemTemplate>
@@ -26,7 +26,7 @@
                      <asp:Image ImageUrl="<%#: DataBinder.Eval(Container.DataItem, "CoverImage") %>" Width="200" Height="100" />
                 </ItemTemplate>
             </asp:TemplateField>--%>
-            <asp:ImageField DataImageUrlField="CoverUrlPath" DataImageUrlFormatString="~/{0}" />
+            <asp:ImageField DataImageUrlField="CoverUrlPath" DataImageUrlFormatString="~/{0}"/>
             <asp:DynamicField DataField="Name" HeaderText="Title" />
             <asp:BoundField DataField="Description" HeaderText="Description" />
             <asp:DynamicField DataField="CreatedOn" HeaderText="Created" />
