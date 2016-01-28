@@ -11,12 +11,14 @@
     * Opportunity for approving each of the albums
     
     * Used items
-         - Grid view for listing all of the albums
+         - Grid view for listing all of the albums and users
             1. Sorting
             2. Paging
+            3. Cache for the users for 5 minutes
          - Carousel for the detailed view of each of the albums
          - User Controls
             1. Carousel
+            2. User Grid
             
 #User Panel
     * Listing all approved albums
@@ -32,5 +34,5 @@
               1. Sorting
               2. Paging
           - User Controls
-            1. Repeater
+            1. Gallery
             
