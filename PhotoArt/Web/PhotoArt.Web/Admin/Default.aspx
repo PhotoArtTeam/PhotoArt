@@ -12,8 +12,7 @@
                 <div class="info-box-custom-content">
 
                     <span class="info-box-custom-text">Pending Albums</span><span class="info-box-custom-number">
-                        <asp:Label runat="server" ID="PendingAlbums" ItemType="Product">
-     
+                        <asp:Label runat="server" ID="PendingAlbums" ItemType="Product">     
                         </asp:Label>
                     </span>
                 </div>

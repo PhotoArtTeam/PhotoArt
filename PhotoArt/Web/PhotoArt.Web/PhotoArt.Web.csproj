@@ -291,6 +291,7 @@
     <Content Include="Content\ripples.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\Carousel.ascx" />
+    <Content Include="Controls\RetroGallery.ascx" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="Account\Web.config" />
     <!-- <Content Include="ApplicationInsights.config">
@@ -671,6 +672,13 @@
     </Compile>
     <Compile Include="Controls\Carousel.ascx.designer.cs">
       <DependentUpon>Carousel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RetroGallery.ascx.cs">
+      <DependentUpon>RetroGallery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\RetroGallery.ascx.designer.cs">
+      <DependentUpon>RetroGallery.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
