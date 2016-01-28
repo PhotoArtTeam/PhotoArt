@@ -113,6 +113,7 @@ namespace PhotoArt.Web.Admin.Albums
                         fileService.Save(task, currentImageUpload.Url);
 
                     }
+                    
                 }
             }
         }

@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="Update Album" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="PhotoArt.Web.Admin.Albums.Update" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <link href="../Content/file-upload-style.css" rel="stylesheet" />
+    <link href="../Content/file-upload-style.css" rel="stylesheet" />
     <script src="../Scripts/CustomScripts/previewImageScript.js"></script>
-
+    <link href="../Content/fotorama.css" rel="stylesheet" />
+    <script src="../Scripts/CustomScripts/fotorama.js"></script>
     <asp:UpdatePanel ID="UpdatePanelAlbums" runat="server">
         <ContentTemplate>
             <asp:Panel ID="PanelAlbums" runat="server">
@@ -25,12 +26,14 @@
                     </div>
                 </div>
                 <div class="form-group col-md-12 col-md-offset-1">
-                    <asp:Repeater ID="currentAlbum" runat="server">
-                        <ItemTemplate>
-                            <asp:Image runat="server" ImageUrl='<%#: string.Format("~/{0}",Eval("Url")) %>' />
-                            <%-- <img src="<%#: string.Format("~/{0}",DataBinder.Eval(Container.DataItem, "Url")) %>" class="gallery-images" />--%>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    <div class="fotorama col-md-offset-2" data-width="800" data-max-width="100%">
+                        <asp:Repeater ID="currentAlbum" runat="server">
+                            <ItemTemplate>
+                                <asp:Image runat="server" ImageUrl='<%#: string.Format("~/{0}",Eval("Url")) %>' />
+                                <%-- <img src="<%#: string.Format("~/{0}",DataBinder.Eval(Container.DataItem, "Url")) %>" class="gallery-images" />--%>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </div>
                 </div>
                 <label class="file-upload">
                     <span><strong>Upload Images</strong></span>
@@ -46,8 +49,8 @@
                 </div>
             </asp:Panel>
         </ContentTemplate>
-         <Triggers>
-                <asp:PostBackTrigger ControlID="AddImages" />
-            </Triggers>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="AddImages" />
+        </Triggers>
     </asp:UpdatePanel>
 </asp:Content>
