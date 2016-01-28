@@ -63,9 +63,7 @@
                 <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/Admin/Default">Admin</a></li>
+                        <li><a runat="server" href="~/Admin/Default" ID="adminLink">Admin</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -89,6 +87,25 @@
             </div>
         </div>
         <div class="container">
+            <asp:SiteMapPath
+                ID="SiteMap1"
+                runat="server"
+                PathSeparator=" / "
+                ParentLevelsDisplayed="1"
+                PathDirection="RootToCurrent"
+                RenderCurrentNodeAsLink="false"
+                ShowToolTips="false">
+                <NodeTemplate>
+                    <span>
+                        <asp:HyperLink
+                            ID="lnkPage"
+                            Text='<%# Eval("Title") %>'
+                            NavigateUrl='<%# Eval("Url") %>'
+                            ToolTip='<%# Eval("Description") %>'
+                            runat="server" />
+                    </span>
+                </NodeTemplate>
+            </asp:SiteMapPath>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>

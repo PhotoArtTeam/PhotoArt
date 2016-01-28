@@ -86,13 +86,17 @@
         </Triggers>
     </asp:UpdatePanel>
 
-    <asp:GridView ID="GridAlbums" runat="server" AutoGenerateColumns="False"
-        AllowPaging="True" DataKeyNames="ID"
-        OnPageIndexChanging="GridAlbums_PageIndexChanging"
-        OnRowDataBound="GridAlbums_RowDataBound"
+    <asp:GridView ID="GridAlbums" runat="server" 
+        DataKeyNames="Id"
+        ItemType="PhotoArt.Web.ViewModels.AlbumViewModel"
+        SelectMethod="AlbumsGrid_GetData"
+        AllowPaging="True"
+        AllowSorting="True"
+        AutoGenerateColumns="False"
+        PageSize="10"
         CssClass="table table-striped table-bordered table-condensed">
         <Columns>
-            <asp:BoundField DataField="Name" HeaderText="Title" />
+            <asp:DynamicField DataField="Name" HeaderText="Title" />
             <asp:BoundField DataField="Description" HeaderText="Description" />
             <asp:BoundField DataField="CreatedOn" HeaderText="Created" />
             <asp:HyperLinkField Text="Update Album" DataNavigateUrlFields="Id"

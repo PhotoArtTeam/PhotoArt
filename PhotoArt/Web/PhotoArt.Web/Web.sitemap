@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Home"  description="Home Page">
+    <siteMapNode title="Users">
+      <siteMapNode title="Profile" description="Profile page" url="~/Account/Manage"/>
+      <siteMapNode title="Password" description="Profile password" url="~/Account/ManagePassword"/>
+    </siteMapNode>
+    <siteMapNode title="Admin" description="Admin Panel" url="~/Admin">
+      <siteMapNode title="Albums" description="Admin Albums" url="~/Admin/Albums">
+        <siteMapNode title="Details" description="Admin Albums Details" url="~/Admin/Albums/Details"/>
+        <siteMapNode title="Pending" description="Admin Albums Pending" url="~/Admin/Albums/Pending"/>
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Albums" description="Albums" url="~/Albums">
+      <siteMapNode title="Details" description="Albums description" url="~/Albums/Details"/>
+      <siteMapNode title="Update" description="Albums Update" url="~/Albums/Update"/>
+    </siteMapNode>
+    <siteMapNode title="Portfolios" description="Portfolios" url="~/Portfolios">
+      <siteMapNode title="Create" description="Create" url="~/Portfolios/Create"/>
+      <siteMapNode title="YourPortfolio" description="Your Portfolio" url="~/Portfolios/YourPortfolio"/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

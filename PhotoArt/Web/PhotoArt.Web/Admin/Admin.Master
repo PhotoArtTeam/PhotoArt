@@ -28,7 +28,7 @@
             </asp:ScriptManager>
 
             <header class="main-header">
-                <a class="logo" href="~/Default.aspx">
+                <a class="logo" href="~/../../../Default.aspx">
                     <span class="logo-mini">CS</span>
                     <span class="logo-lg">Clent Side</span>
                 </a>
