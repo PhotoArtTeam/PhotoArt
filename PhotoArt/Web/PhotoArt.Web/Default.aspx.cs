@@ -21,6 +21,7 @@ namespace PhotoArt.Web
                         Description = x.Description,
                         CreatedOn = x.CreatedOn,
                         IsApproved = x.IsApproved,
+                        Url = x.Images.FirstOrDefault().Url,
                         CoverImage1 = "data:image/jpeg;base64," + x.Images.FirstOrDefault().Content,
                         CoverImage = "data:image/jpeg;base64," + Convert.ToBase64String(x.Images.FirstOrDefault().Content)
                     })

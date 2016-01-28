@@ -75,6 +75,22 @@
         <asp:UpdatePanel ID="UpdatePanelImages" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <asp:Panel ID="PanelImages" runat="server" Visible="false">
+                    <%--<div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="ImageDescription" CssClass="col-md-2 control-label">Image Description</asp:Label>
+                        <div class="col-md-6">
+                            <asp:TextBox runat="server" ID="ImageDescription" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ImageDescription"
+                                CssClass="text-danger" ErrorMessage="The image description field is required." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="ImageLocation" CssClass="col-md-2 control-label">Image Location</asp:Label>
+                        <div class="col-md-6">
+                            <asp:TextBox runat="server" ID="ImageLocation" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ImageLocation"
+                                CssClass="text-danger" ErrorMessage="The image location field is required." />
+                        </div>
+                    </div>--%>
                     <label class="file-upload">
                         <span><strong>Upload Images</strong></span>
                         <asp:FileUpload ID="fileuploadControl" runat="server" AllowMultiple="true" />
