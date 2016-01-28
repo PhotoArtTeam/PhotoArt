@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="PhotoArt.Web.Portfolios.Create" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="PhotoArt.Web.Portfolios.Create" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Name" CssClass="col-md-2 control-label">Name</asp:Label>
                         <div class="col-md-6">
-                            <asp:TextBox runat="server" ID="Name" CssClass="form-control" />
+                            <asp:TextBox  runat="server" ID="Name" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Name"
                                 CssClass="text-danger" ErrorMessage="The name field is required." />
                         </div>

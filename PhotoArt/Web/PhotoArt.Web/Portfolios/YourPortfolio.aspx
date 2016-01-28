@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Your Portfolio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="YourPortfolio.aspx.cs" Inherits="PhotoArt.Web.Portfolios.YourPortfolio" %>
+﻿<%@ Page Title="Your Portfolio" Language="C#" MasterPageFile="~/Site.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="YourPortfolio.aspx.cs" Inherits="PhotoArt.Web.Portfolios.YourPortfolio" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/file-upload-style.css" rel="stylesheet" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Update Album" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="PhotoArt.Web.Admin.Albums.Update" %>
+﻿<%@ Page Title="Update Album" Language="C#" MasterPageFile="~/Site.Master" ValidateRequest="false" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="PhotoArt.Web.Admin.Albums.Update" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/file-upload-style.css" rel="stylesheet" />
