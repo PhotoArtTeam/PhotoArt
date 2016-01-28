@@ -229,6 +229,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\Albums\Details.aspx" />
     <Content Include="Admin\Albums\Pending.aspx" />
+    <Content Include="Admin\Users\Users.aspx" />
     <Content Include="Albums\Update.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\HtmlPage1.html" />
@@ -292,6 +293,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Controls\Carousel.ascx" />
     <Content Include="Controls\RetroGallery.ascx" />
+    <Content Include="Controls\UserGrid.ascx" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="Account\Web.config" />
     <!-- <Content Include="ApplicationInsights.config">
@@ -617,6 +619,13 @@
     <Compile Include="Admin\Albums\Pending.aspx.designer.cs">
       <DependentUpon>Pending.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Users\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Albums\Update.aspx.cs">
       <DependentUpon>Update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -680,6 +689,13 @@
     <Compile Include="Controls\RetroGallery.ascx.designer.cs">
       <DependentUpon>RetroGallery.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\UserGrid.ascx.cs">
+      <DependentUpon>UserGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserGrid.ascx.designer.cs">
+      <DependentUpon>UserGrid.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -723,6 +739,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AlbumViewModel.cs" />
     <Compile Include="ViewModels\ImageViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

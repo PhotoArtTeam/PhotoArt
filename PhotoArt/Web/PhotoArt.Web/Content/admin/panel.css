@@ -117,3 +117,14 @@ th {
 td a {
 color:rgba(0,0,0,0.8)  !important;
 }
+
+.user-grid img{
+    width: 150px;
+    height:150px;
+    border-radius: 80%;
+    border: 2px solid rgba(0,0,0,0.7);
+}
+
+.user-grid td:first-child{
+    width: 10px;
+}
