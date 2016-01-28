@@ -69,7 +69,10 @@ namespace PhotoArt.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.User.IsInRole("Admin"))
+            {
+                this.adminLink.Visible = false;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
