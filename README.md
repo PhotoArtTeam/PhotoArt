@@ -1,6 +1,7 @@
 # PhotoArt
 
-    Reveal your true talent in taking pictures whithin the boundaries of our web site. You can browse others albums and estimate your readibility to become a professional photographer.
+    Reveal your true talent in taking pictures whithin the boundaries of our web site. 
+    You can browse others albums and estimate your readibility to become a professional photographer.
     
     As part of the admin team, we will review your album before its publication (You know for safety reasons)
     
